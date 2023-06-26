@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
+:root {
+  --prime-one: #ffbf86;
+  --prime-two: #fed2aa;
+  --accent: #f3f0d7;
+  --secondary-one: #cee5d0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  background-color: var(--prime-one);
+}
+
+body > h1 {
+  align-self: center;
+  margin: 1rem 0;
+  font-size: 4rem;
+  font-family: "Belanosima", sans-serif;
+  text-shadow: 0px 10px 10px 5px #ffffff7a;
+  color: white;
+}
+
+.gameBoard {
+  display: grid;
+  background-color: var(--prime-two);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 10px 5px #97785a4a;
+  align-self: center;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gameBoard .cell {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2rem;
+  align-content: center;
+  border-radius: 1rem;
+  width: 5rem;
+  height: 5rem;
+  color: #fff;
+  background-color: transparent;
+  border: 5px solid var(--accent);
+  transition: background-color ease 0.8s;
+  font-family: "Belanosima", sans-serif;
+}
+
+.gameBoard .cell:hover {
+  background-color: var(--secondary-one);
+}
