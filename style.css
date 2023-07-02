@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Belanosima&display=swap");
+/* general */
 :root {
   --prime-one: #ffbf86;
   --prime-two: #fed2aa;
@@ -9,14 +10,14 @@
 body {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
   flex-wrap: nowrap;
   background-color: var(--prime-one);
 }
 
-body > h1 {
+body .gameBoardContainer h1 {
   align-self: center;
   margin: 1rem 0;
   font-size: 4rem;
@@ -25,8 +26,122 @@ body > h1 {
   color: white;
 }
 
+.gameBoardContainer {
+  align-self: center;
+}
+
+/* user input */
+.inputPlayerData {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+.inputPlayerData button {
+  background-color: var(--prime-two);
+  border: 2px solid var(--secondary-one);
+  padding: 1rem 1.5rem;
+  color: #fff;
+  font-weight: bolder;
+  font-size: x-large;
+  transition: background-color ease-in 500ms;
+  border-radius: 3rem;
+  margin: 1rem 0;
+}
+
+.inputPlayerData input::placeholder {
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+}
+
+.inputPlayerData input {
+  padding: 1rem 2rem;
+  background-color: var(--prime-two);
+  color: #fff;
+  font-weight: bold;
+  border: 2px solid var(--secondary-one);
+  outline: none;
+  font-size: large;
+  margin: 1rem 1rem;
+  transition: background-color ease-in 500ms;
+  border-radius: 1rem;
+}
+
+.inputPlayerData button:hover,
+.inputPlayerData input[type="text"]:hover {
+  background-color: var(--secondary-one);
+}
+
+.inputPlayerData label {
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: "Belanosima", sans-serif;
+  color: white;
+}
+
+.inputPlayerData > p {
+  margin-top: 1rem;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: rgb(255, 0, 0);
+}
+
+.inputPlayerData .XORO {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.inputPlayerData .XORO input.O {
+  margin-left: 0.5rem;
+}
+
+.inputPlayerData .XORO input {
+  display: none;
+}
+
+.inputPlayerData .XORO div.cont {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 100rem;
+}
+
+.inputPlayerData .XORO div.cont label {
+  font-size: 1.5rem;
+  background-color: var(--prime-two);
+  justify-self: center;
+  content: "";
+  position: relative;
+  margin-left: 1rem;
+  padding: 1rem;
+  border-radius: 3rem;
+  transition: background-color ease-in-out 600ms;
+}
+
+.inputPlayerData .XORO div.cont label:hover {
+  background-color: var(--secondary-one);
+}
+.inputPlayerData .XORO div.cont input[type="radio"]:checked + label {
+  background-color: var(--secondary-one);
+}
+
+/* game board that will be created in javascript */
+
 .gameBoard {
   display: grid;
+  justify-items: center;
+  align-items: center;
   background-color: var(--prime-two);
   padding: 3rem;
   border-radius: 1rem;
@@ -35,6 +150,7 @@ body > h1 {
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-left: 1rem;
 }
 
 .gameBoard .cell {

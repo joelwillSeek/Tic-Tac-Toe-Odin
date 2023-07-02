@@ -9,11 +9,47 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- input user data -->
+    <div class="inputPlayerData">
+      <div class="player1Side">
+        <input type="text" id="player1" placeholder="Player 1's Name" />
+        <label for="player1">Player 1</label>
+        <div class="XORO">
+          <div class="cont">
+            <input
+              type="radio"
+              name="choosexoro"
+              checked
+              value="X"
+              id="here1"
+            />
+            <label for="here1">X</label>
+
+            <input
+              type="radio"
+              class="O"
+              name="choosexoro"
+              value="O"
+              id="here2"
+            />
+            <label for="here2">O</label>
+          </div>
+        </div>
+      </div>
+      <div class="player2Side">
+        <label for="player2">Player 2</label>
+        <input type="text" id="player2" placeholder="Player 2's Name" />
+      </div>
+      <button>Start/Restart Game</button>
+      <p>Note Worthy:-Player 1 decides the X or O then Player 2 is defaulted</p>
+    </div>
     <!-- 
     div with gameBoard 
     9 div class cell will be created
     by js
     -->
-    <h1>Player 1's Turn</h1>
+    <div class="gameBoardContainer">
+      <h1>Enter name, Symbol</h1>
+    </div>
   </body>
 </html>
