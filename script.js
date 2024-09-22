@@ -121,7 +121,7 @@ let GameFlow = () => {
     topOfBoardtextForCurrentPlayer.textContent = `Player: ${turn.name}`;
     setTimeout(() => {
       if (checkIfWinner(turn.clickedCellByPlayer)) {
-        alert(turn.name, "winner");
+        alert(`winner: ${turn.name}`);
       } else {
         if (turn === player1) turn = player2;
         else if (turn === player2) turn = player1;
